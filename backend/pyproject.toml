@@ -1,0 +1,30 @@
+[project]
+name = "moneytracker"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Valentin Bosshard"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "sqlalchemy (>=2.0.45,<3.0.0)",
+    "alembic (>=1.18.0,<2.0.0)",
+    "aiosqlite (>=0.22.1,<0.23.0)",
+    "fastapi (>=0.128.0,<0.129.0)",
+    "uvicorn (>=0.40.0,<0.41.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{include = "app"}]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.14.11"
+pre-commit = "^4.5.1"
+ty = "^0.0.11"
+
