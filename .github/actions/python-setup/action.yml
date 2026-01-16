@@ -1,0 +1,17 @@
+name: 'Backend Setup'
+runs:
+  using: "composite"
+  steps:
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+        cache: "poetry"
+    - name: Install Dependencies
+      run: cd backend && poetry install
+      shell: bash
